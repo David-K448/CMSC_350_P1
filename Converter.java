@@ -55,14 +55,22 @@ public class Converter extends JFrame{
       preToPost.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent e){
           userString = userInput.getText();
-          prePostCalc(userString);
+          try{
+            prePostCalc(userString);
+          } catch(Exception er) {
+            JOptionPane.showMessageDialog(null, "Error with PreFix expression");
+          }
         }
       });
       // action listener for post to pre 
       postToPre.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent e){
           userString = userInput.getText();
-          postToPreCalc(userString);
+          try{
+            postToPreCalc(userString);
+          } catch(Exception er) {
+            JOptionPane.showMessageDialog(null, "Error with PostFix expression");
+          }
         }
       });
     }
@@ -95,6 +103,7 @@ public class Converter extends JFrame{
     
     public void postToPreCalc(String userString){
       Stack<String> s = new Stack<String>();
+      
       for (int i = 0; i<userString.length(); i++){
         if(checkOperator(userString.charAt(i))) {
           String s1 = s.peek();
