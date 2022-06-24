@@ -1,4 +1,10 @@
-
+/**
+ * David Killian
+ * Summer 2022
+ * 6/24/22
+ * Professor Beyer
+ * CMSC 350 6981
+ */
 import java.awt.event.*;
 import javax.swing.*; import javax.swing.JOptionPane;
 import java.util.Stack;
